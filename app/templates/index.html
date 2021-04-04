@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+  <title>Guessing Game</title>
+</head>
+<body style="border-style:solid; padding-top: 10px; padding-bottom: 50px; margin-left: 500px; margin-right: 500px;">
+    <center><h1 class="mx-auto my-0 text-uppercase">Guessing game</h1></center>
+    <form action="/start" method="POST">
+            <center><button class="btn btn-primary js-scroll-trigger button btn-dark" type="submit">Start Game</button></center>
+    </form>
+</body>
+
+{% endblock %}

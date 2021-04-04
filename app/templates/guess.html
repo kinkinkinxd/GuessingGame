@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="display:flex; flex-direction:column; align-items:center;">  
+        <div style="display: flex; margin-top: 3rem; margin-bottom: 1rem;">
+            <h2 style="margin-right: 3rem;">{{ stat["answer"][0] }}</h2>
+            <h2 style="margin-right: 3rem;">{{ stat["answer"][1] }}</h2>
+            <h2 style="margin-right: 3rem;">{{ stat["answer"][2] }}</h2>
+            <h2 style="margin-right: 3rem;">{{ stat["answer"][3] }}</h2>
+        </div>
+        <h3 class="text-center"> {{stat["count"]}}</h3>
+        <div style="display: flex; margin-top: 3rem;">
+            {% if stat["answer"][3] != "_" %}
+                <form method ="POST" action="/start">
+                    <input class="btn btn-dark"type="submit" style="width:200px;height:70px; 4rem;" value="Play again" name="play_again">
+                </form>
+            {% else %}
+                <form method ="POST" action="/guess">
+                    <input class="btn btn-dark" type="submit" style="width:80px;height:60px; margin-right: 2rem;" value="A" name="button">
+                    <input class="btn btn-dark" type="submit" style="width:80px;height:60px; margin-right: 2rem;" value="B" name="button">
+                    <input class="btn btn-dark" type="submit" style="width:80px;height:60px; margin-right: 2rem;" value="C" name="button">
+                    <input class="btn btn-dark" type="submit" style="width:80px;height:60px; margin-right: 2rem;" value="D" name="button">
+                </form>
+            {% endif %}           
+        </div>
+    </div
+{% endblock %}
